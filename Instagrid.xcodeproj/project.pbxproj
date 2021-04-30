@@ -65,12 +65,12 @@
 				86945634263C6DA200FE699B /* ViewController.swift */,
 				86945636263C6DA200FE699B /* Main.storyboard */,
 				8694563B263C6DA300FE699B /* LaunchScreen.storyboard */,
-				8694564B263C849600FE699B /* Assest_Fonts */,
+				8694564B263C849600FE699B /* Assets_Fonts */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
 		};
-		8694564B263C849600FE699B /* Assest_Fonts */ = {
+		8694564B263C849600FE699B /* Assets_Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				86945639263C6DA300FE699B /* Assets.xcassets */,
@@ -78,7 +78,7 @@
 				86945648263C83F600FE699B /* Delm-Medium.otf */,
 				8694563E263C6DA300FE699B /* Info.plist */,
 			);
-			path = Assest_Fonts;
+			path = Assets_Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
