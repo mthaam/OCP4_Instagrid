@@ -13,6 +13,8 @@
 		86945638263C6DA200FE699B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86945636263C6DA200FE699B /* Main.storyboard */; };
 		8694563A263C6DA300FE699B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86945639263C6DA300FE699B /* Assets.xcassets */; };
 		8694563D263C6DA300FE699B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8694563B263C6DA300FE699B /* LaunchScreen.storyboard */; };
+		86945646263C83D700FE699B /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86945645263C83D700FE699B /* ThirstySoftRegular.otf */; };
+		86945649263C83F600FE699B /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86945648263C83F600FE699B /* Delm-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		86945639263C6DA300FE699B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8694563C263C6DA300FE699B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8694563E263C6DA300FE699B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86945645263C83D700FE699B /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		86945648263C83F600FE699B /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,21 @@
 				86945632263C6DA200FE699B /* SceneDelegate.swift */,
 				86945634263C6DA200FE699B /* ViewController.swift */,
 				86945636263C6DA200FE699B /* Main.storyboard */,
-				86945639263C6DA300FE699B /* Assets.xcassets */,
 				8694563B263C6DA300FE699B /* LaunchScreen.storyboard */,
-				8694563E263C6DA300FE699B /* Info.plist */,
+				8694564B263C849600FE699B /* Assest_Fonts */,
 			);
 			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		8694564B263C849600FE699B /* Assest_Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				86945639263C6DA300FE699B /* Assets.xcassets */,
+				86945645263C83D700FE699B /* ThirstySoftRegular.otf */,
+				86945648263C83F600FE699B /* Delm-Medium.otf */,
+				8694563E263C6DA300FE699B /* Info.plist */,
+			);
+			path = Assest_Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +139,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8694563D263C6DA300FE699B /* LaunchScreen.storyboard in Resources */,
+				86945649263C83F600FE699B /* Delm-Medium.otf in Resources */,
 				8694563A263C6DA300FE699B /* Assets.xcassets in Resources */,
+				86945646263C83D700FE699B /* ThirstySoftRegular.otf in Resources */,
 				86945638263C6DA200FE699B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
