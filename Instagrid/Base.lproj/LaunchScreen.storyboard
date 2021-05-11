@@ -1,46 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ThirstySoftRegular.otf">
-            <string>ThirstySoftRegular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="headTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93A-3m-40m">
-                                <rect key="frame" x="375.5" y="646.5" width="273" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="93A-3m-40m" secondAttribute="height" multiplier="273:73" id="lan-QU-4W1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="56"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="gww-v5-J35">
+                                <rect key="frame" x="112" y="159" width="96" height="162"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="fPc-9r-wAk">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="69b-2s-HbY"/>
+                                            <constraint firstAttribute="width" secondItem="fPc-9r-wAk" secondAttribute="height" multiplier="1:1" id="PGE-4f-VaP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="dp9-4B-2FU">
+                                        <rect key="frame" x="0.0" y="132" width="96" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dp9-4B-2FU" secondAttribute="height" multiplier="41:13" id="EHH-Nr-tor"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.67666691540000001" green="0.84821552040000003" blue="0.9019519091" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="93A-3m-40m" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="AjX-hh-B37"/>
-                            <constraint firstItem="93A-3m-40m" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZPm-04-u9G"/>
+                            <constraint firstItem="gww-v5-J35" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Pxv-qf-rw3"/>
+                            <constraint firstItem="gww-v5-J35" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xGC-VD-FK5"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51.86915887850467" y="374.51403887688986"/>
+            <point key="canvasLocation" x="50.625" y="373.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon" width="60" height="60"/>
+        <image name="Instagrid" width="41.5" height="13"/>
+    </resources>
 </document>
