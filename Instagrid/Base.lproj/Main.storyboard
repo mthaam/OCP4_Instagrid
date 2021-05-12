@@ -122,11 +122,11 @@
                                 <rect key="frame" x="40" y="98.5" width="334" height="174.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="hfO-sx-HUj" userLabel="Transparent_UIView">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="131.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="129.5"/>
                                         <variation key="heightClass=compact" hidden="YES"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Sdo-fx-toN">
-                                        <rect key="frame" x="161" y="131.5" width="12" height="12"/>
+                                        <rect key="frame" x="161" y="129.5" width="12" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Sdo-fx-toN" secondAttribute="height" multiplier="1:1" id="HMT-nQ-OTz"/>
                                             <constraint firstAttribute="height" constant="12" id="v4v-qp-M7k"/>
@@ -134,7 +134,7 @@
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y2-Kk-1FJ">
-                                        <rect key="frame" x="81" y="143.5" width="172.5" height="31"/>
+                                        <rect key="frame" x="54" y="141.5" width="226.5" height="33"/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="28"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -209,7 +209,7 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="249" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Zc-Ub-G5t" userLabel="Selection_Buttons Stack View">
-                                <rect key="frame" x="64" y="761.5" width="286" height="84.5"/>
+                                <rect key="frame" x="64" y="713.5" width="286" height="84.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zML-Lv-irD" userLabel="Left_Button2SquaresBottom">
                                         <rect key="frame" x="0.0" y="0.0" width="84.5" height="84.5"/>
@@ -249,7 +249,7 @@
                                 <variation key="heightClass=compact" constant="88"/>
                             </constraint>
                             <constraint firstItem="xan-FX-62F" firstAttribute="bottom" secondItem="3DO-4t-uTj" secondAttribute="bottom" id="CFJ-Si-GPf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Zc-Ub-G5t" secondAttribute="bottom" constant="16" id="D4Z-Io-iVb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Zc-Ub-G5t" secondAttribute="bottom" constant="64" id="D4Z-Io-iVb"/>
                             <constraint firstItem="2Zc-Ub-G5t" firstAttribute="top" secondItem="xan-FX-62F" secondAttribute="bottom" constant="8" id="EcA-tg-L8e"/>
                             <constraint firstItem="2Zc-Ub-G5t" firstAttribute="leading" secondItem="3DO-4t-uTj" secondAttribute="trailing" constant="51.666666666666629" id="Gli-zy-u5c">
                                 <variation key="heightClass=compact" constant="56"/>
@@ -302,6 +302,7 @@
                             <mask key="constraints">
                                 <exclude reference="Jdn-R3-7tE"/>
                                 <exclude reference="g53-k7-epK"/>
+                                <exclude reference="Muy-el-CCC"/>
                                 <exclude reference="25e-P5-Ue5"/>
                                 <exclude reference="CFJ-Si-GPf"/>
                                 <exclude reference="HRA-f5-POC"/>
@@ -318,7 +319,6 @@
                                 <exclude reference="nXq-p9-OD9"/>
                                 <exclude reference="uyT-XL-Iyp"/>
                                 <exclude reference="wZJ-r9-rdf"/>
-                                <exclude reference="Muy-el-CCC"/>
                                 <exclude reference="7ZB-Mi-yBD"/>
                                 <exclude reference="EcA-tg-L8e"/>
                                 <exclude reference="Gli-zy-u5c"/>
@@ -340,6 +340,9 @@
                                 <include reference="g53-k7-epK"/>
                                 <exclude reference="swd-OI-0XI"/>
                                 <exclude reference="xT4-i1-dwx"/>
+                                <include reference="Muy-el-CCC"/>
+                                <exclude reference="Ock-D4-srS"/>
+                                <exclude reference="P4F-6G-UwK"/>
                                 <exclude reference="01s-YS-wqa"/>
                                 <include reference="25e-P5-Ue5"/>
                                 <exclude reference="5M8-cy-qGN"/>
@@ -361,9 +364,6 @@
                                 <include reference="nXq-p9-OD9"/>
                                 <exclude reference="uyT-XL-Iyp"/>
                                 <exclude reference="wZJ-r9-rdf"/>
-                                <include reference="Muy-el-CCC"/>
-                                <exclude reference="Ock-D4-srS"/>
-                                <exclude reference="P4F-6G-UwK"/>
                                 <exclude reference="7ZB-Mi-yBD"/>
                                 <exclude reference="EcA-tg-L8e"/>
                                 <include reference="Gli-zy-u5c"/>
