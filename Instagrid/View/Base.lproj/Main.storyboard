@@ -118,7 +118,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="bottomStackView" destination="yQ0-GY-kt7" id="kEG-sp-c0W"/>
+                                    <outlet property="bottomStackView" destination="yQ0-GY-kt7" id="CVm-Kg-Afy"/>
                                     <outlet property="topStackView" destination="Ra3-PC-s3B" id="gSz-W5-KGR"/>
                                 </connections>
                             </view>
@@ -126,11 +126,11 @@
                                 <rect key="frame" x="40" y="98.5" width="334" height="174.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="hfO-sx-HUj" userLabel="Transparent_UIView">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="131.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="129.5"/>
                                         <variation key="heightClass=compact" hidden="YES"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Sdo-fx-toN">
-                                        <rect key="frame" x="161" y="131.5" width="12" height="12"/>
+                                        <rect key="frame" x="161" y="129.5" width="12" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Sdo-fx-toN" secondAttribute="height" multiplier="1:1" id="HMT-nQ-OTz"/>
                                             <constraint firstAttribute="height" constant="12" id="v4v-qp-M7k"/>
@@ -138,18 +138,18 @@
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9y2-Kk-1FJ">
-                                        <rect key="frame" x="81" y="143.5" width="172.5" height="31"/>
+                                        <rect key="frame" x="54" y="141.5" width="226.5" height="33"/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="28"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact" hidden="YES"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnk-bD-Ghq">
-                                        <rect key="frame" x="44" y="26" width="131.5" height="65.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnk-bD-Ghq">
+                                        <rect key="frame" x="51" y="174.5" width="232.5" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" hidden="NO"/>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -157,15 +157,7 @@
                                     <constraint firstItem="hfO-sx-HUj" firstAttribute="leading" secondItem="xan-FX-62F" secondAttribute="leading" id="otr-9y-GDX"/>
                                     <constraint firstAttribute="trailing" secondItem="hfO-sx-HUj" secondAttribute="trailing" id="wv5-aj-bpc"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="qnk-bD-Ghq"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=compact" distribution="fill" spacing="14">
-                                    <mask key="subviews">
-                                        <include reference="qnk-bD-Ghq"/>
-                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="Gmv-IQ-alC"/>
                                         <exclude reference="otr-9y-GDX"/>
@@ -222,20 +214,29 @@
                                             <constraint firstAttribute="width" secondItem="zML-Lv-irD" secondAttribute="height" multiplier="1:1" id="z18-os-I1j"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <connections>
+                                            <action selector="photogridTypeButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hx-7K-5HG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz0-PE-Wls" userLabel="Middle_Button2SquaresUp">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz0-PE-Wls" userLabel="Middle_Button2SquaresUp">
                                         <rect key="frame" x="100.5" y="0.0" width="85" height="84.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dz0-PE-Wls" secondAttribute="height" multiplier="1:1" id="LV5-3o-YJf"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 2"/>
+                                        <connections>
+                                            <action selector="photogridTypeButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2vt-kl-MN0"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsX-qq-iGK" userLabel="Right_Button4Squares">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsX-qq-iGK" userLabel="Right_Button4Squares">
                                         <rect key="frame" x="201.5" y="0.0" width="84.5" height="84.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zsX-qq-iGK" secondAttribute="height" multiplier="1:1" id="K3r-73-5Xx"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <connections>
+                                            <action selector="photogridTypeButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SyF-E9-J1G"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="vertical" distribution="equalSpacing"/>
@@ -388,6 +389,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="blueView" destination="3DO-4t-uTj" id="pX2-FF-eYm"/>
+                        <outlet property="bottomLeft_UIImage" destination="btQ-9O-Dgo" id="jHd-Sz-uuo"/>
+                        <outlet property="bottomRight_UIImage" destination="wOM-gM-h20" id="Lfc-Rc-RI0"/>
+                        <outlet property="topLeft_UIImage" destination="Pm4-5Z-Pc2" id="0JD-6E-gM2"/>
+                        <outlet property="topRight_UIImage" destination="fVL-8v-rHg" id="HE6-uJ-e2D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

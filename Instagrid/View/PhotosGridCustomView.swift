@@ -29,8 +29,10 @@ class PhotosGridCustomView: UIView {
             bottomStackView.arrangedSubviews[0].isHidden = false
         case .twoSquaresBottom :
             topStackView.arrangedSubviews[0].isHidden = true
-        case .twoSquaresUp :
             bottomStackView.arrangedSubviews[0].isHidden = false
+        case .twoSquaresUp :
+            bottomStackView.arrangedSubviews[0].isHidden = true
+            topStackView.arrangedSubviews[0].isHidden = false
         }
     }
 
