@@ -41,6 +41,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8686DBD3264D87D6006D6469 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				86945630263C6DA200FE699B /* AppDelegate.swift */,
+				86945632263C6DA200FE699B /* SceneDelegate.swift */,
+				86945648263C83F600FE699B /* Delm-Medium.otf */,
+				86945645263C83D700FE699B /* ThirstySoftRegular.otf */,
+				86945639263C6DA300FE699B /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		8686DBD4264D885A006D6469 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				86945634263C6DA200FE699B /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		86945624263C6DA200FE699B = {
 			isa = PBXGroup;
 			children = (
@@ -60,25 +80,21 @@
 		8694562F263C6DA200FE699B /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				86945630263C6DA200FE699B /* AppDelegate.swift */,
-				86945632263C6DA200FE699B /* SceneDelegate.swift */,
-				86945634263C6DA200FE699B /* ViewController.swift */,
-				86945636263C6DA200FE699B /* Main.storyboard */,
-				8694563B263C6DA300FE699B /* LaunchScreen.storyboard */,
+				8686DBD3264D87D6006D6469 /* Supporting files */,
+				8694564B263C849600FE699B /* View */,
+				8686DBD4264D885A006D6469 /* Controller */,
 				8694563E263C6DA300FE699B /* Info.plist */,
-				8694564B263C849600FE699B /* Assets_Fonts */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
 		};
-		8694564B263C849600FE699B /* Assets_Fonts */ = {
+		8694564B263C849600FE699B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				86945639263C6DA300FE699B /* Assets.xcassets */,
-				86945645263C83D700FE699B /* ThirstySoftRegular.otf */,
-				86945648263C83F600FE699B /* Delm-Medium.otf */,
+				86945636263C6DA200FE699B /* Main.storyboard */,
+				8694563B263C6DA300FE699B /* LaunchScreen.storyboard */,
 			);
-			path = Assets_Fonts;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
