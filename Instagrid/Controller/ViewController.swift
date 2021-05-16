@@ -8,13 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addPhotoFromAlbum))
-        
-    }
+
+    private let imagePickerController = UIImagePickerController()
     
     @IBOutlet weak var blueView: PhotosGridCustomView!
     @IBOutlet weak var topLeft_UIImage: UIImageView!
@@ -24,7 +19,18 @@ class ViewController: UIViewController {
     @IBOutlet var layoutButtonsArray: [UIButton]!
     @IBOutlet weak var swipeToShare_StackView: UIStackView!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        let UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsPhotoFromAlbum(_:)))
+        topLeft_UIImage.addGestureRecognizer(UITapGestureRecognizer)
+        topRight_UIImage.addGestureRecognizer(UITapGestureRecognizer)
+        bottomLeft_UIImage.addGestureRecognizer(UITapGestureRecognizer)
+        bottomRight_UIImage.addGestureRecognizer(UITapGestureRecognizer)
+        
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestureToShareView(_:)))
+        swipeToShare_StackView.addGestureRecognizer(swipeGestureRecognizer)
+    }
     
     @IBAction func photogridTypeButtonTouched(_ sender: UIButton) {
         layoutButtonsArray.forEach { button in
@@ -33,13 +39,10 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 0:
             blueView.style = .twoSquaresBottom
-            
         case 1:
             blueView.style = .twoSquaresUp
-            
         case 2 :
             blueView.style = .fourSquares
-            
         default:
             blueView.style = .fourSquares
         }
@@ -50,17 +53,25 @@ class ViewController: UIViewController {
         layoutButtonsArray[sender].isSelected = true
         layoutButtonsArray[sender].imageView?.contentMode = .scaleAspectFill
         layoutButtonsArray[sender].setImage(#imageLiteral(resourceName: "Selected"), for: .selected)
-        
     }
     
-    @objc func addPhotoFromAlbum() {
+    @objc func handleTapAddsPhotoFromAlbum(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            openUserPhotoAlbum()
+            }
         
+    }
+    private func openUserPhotoAlbum() {
+//        imagePickerController.sourceType = .photoLibrary
+//        imagePickerController.allowsEditing = true
+//        imagePickerController.delegate = self
+//        present(imagePickerController, animated: true)
     }
     
     
+    @objc func handleSwipeGestureToShareView(_ sender: UISwipeGestureRecognizer ) {
+//        let activityViewController = UIActivityViewController(activityItems: [blueView!], applicationActivities: nil)
+//        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+    }
     
-
-
-
 }
-
