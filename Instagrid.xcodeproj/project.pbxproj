@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8686DBD6264D896D006D6469 /* PhotosGridCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686DBD5264D896D006D6469 /* PhotosGridCustomView.swift */; };
 		86945631263C6DA200FE699B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86945630263C6DA200FE699B /* AppDelegate.swift */; };
 		86945633263C6DA200FE699B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86945632263C6DA200FE699B /* SceneDelegate.swift */; };
 		86945635263C6DA200FE699B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86945634263C6DA200FE699B /* ViewController.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8686DBD5264D896D006D6469 /* PhotosGridCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGridCustomView.swift; sourceTree = "<group>"; };
 		8694562D263C6DA200FE699B /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86945630263C6DA200FE699B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86945632263C6DA200FE699B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			children = (
 				86945636263C6DA200FE699B /* Main.storyboard */,
 				8694563B263C6DA300FE699B /* LaunchScreen.storyboard */,
-				8686DBD5264D896D006D6469 /* PhotosGridCustomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,7 +171,6 @@
 			files = (
 				86945635263C6DA200FE699B /* ViewController.swift in Sources */,
 				86945631263C6DA200FE699B /* AppDelegate.swift in Sources */,
-				8686DBD6264D896D006D6469 /* PhotosGridCustomView.swift in Sources */,
 				86945633263C6DA200FE699B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="3DO-4t-uTj" userLabel="BlueView" customClass="PhotosGridCustomView" customModule="Instagrid" customModuleProvider="target">
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="3DO-4t-uTj" userLabel="BlueView">
                                 <rect key="frame" x="40" y="281" width="334" height="334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3vD-df-PyL" userLabel="PhotosUIImage_Stack View">
@@ -117,10 +117,6 @@
                                         <include reference="zzn-px-sNj"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outlet property="bottomStackView" destination="yQ0-GY-kt7" id="CVm-Kg-Afy"/>
-                                    <outlet property="topStackView" destination="Ra3-PC-s3B" id="gSz-W5-KGR"/>
-                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xan-FX-62F" userLabel="SwipeToShare_Stack View">
                                 <rect key="frame" x="40" y="98.5" width="334" height="174.5"/>
@@ -393,9 +389,11 @@
                         <outlet property="blueView" destination="3DO-4t-uTj" id="pX2-FF-eYm"/>
                         <outlet property="bottomLeft_UIImage" destination="btQ-9O-Dgo" id="jHd-Sz-uuo"/>
                         <outlet property="bottomRight_UIImage" destination="wOM-gM-h20" id="Lfc-Rc-RI0"/>
+                        <outlet property="bottomStackView" destination="yQ0-GY-kt7" id="M0z-Lh-NxN"/>
                         <outlet property="swipeToShare_StackView" destination="xan-FX-62F" id="w9R-E7-Ha5"/>
-                        <outlet property="topLeft_UIImage" destination="Pm4-5Z-Pc2" id="0JD-6E-gM2"/>
+                        <outlet property="topLeft_UIImage" destination="Pm4-5Z-Pc2" id="v2a-zG-It0"/>
                         <outlet property="topRight_UIImage" destination="fVL-8v-rHg" id="HE6-uJ-e2D"/>
+                        <outlet property="topStackView" destination="Ra3-PC-s3B" id="X3I-NZ-XK0"/>
                         <outletCollection property="layoutButtonsArray" destination="zML-Lv-irD" collectionClass="NSMutableArray" id="fBv-bw-LSi"/>
                         <outletCollection property="layoutButtonsArray" destination="dz0-PE-Wls" collectionClass="NSMutableArray" id="7Kc-1t-EPS"/>
                         <outletCollection property="layoutButtonsArray" destination="zsX-qq-iGK" collectionClass="NSMutableArray" id="XBJ-Lm-Nn4"/>
