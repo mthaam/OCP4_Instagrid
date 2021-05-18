@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     // MARK: - Private Properties
     // ==============================================
     
-    private let imagePickerController = UIImagePickerController()
+    private let myImagePickerController = UIImagePickerController()
     private var style: PhotoGridStackViewStyle = .fourSquares {
         didSet {
             setStyle(style: style)
@@ -44,20 +44,24 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         photogridTypeButtonTouched(layoutButtonsArray[1])
-        
-        let TL_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsPhotoFromAlbum(_:)))
+
+        let TL_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        TL_UITapGestureRecognizer.name = "TL"
         topLeft_UIImage.addGestureRecognizer(TL_UITapGestureRecognizer)
-        let TR_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsPhotoFromAlbum(_:)))
+        let TR_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        TR_UITapGestureRecognizer.name = "TR"
         topRight_UIImage.addGestureRecognizer(TR_UITapGestureRecognizer)
-        let BT_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsPhotoFromAlbum(_:)))
-        bottomLeft_UIImage.addGestureRecognizer(BT_UITapGestureRecognizer)
-        let BR_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsPhotoFromAlbum(_:)))
+        let BL_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        BL_UITapGestureRecognizer.name = "BL"
+        bottomLeft_UIImage.addGestureRecognizer(BL_UITapGestureRecognizer)
+        let BR_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        BR_UITapGestureRecognizer.name = "BR"
         bottomRight_UIImage.addGestureRecognizer(BR_UITapGestureRecognizer)
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestureToShareView(_:)))
         swipeToShare_StackView.addGestureRecognizer(swipeGestureRecognizer)
         
-        imagePickerController.delegate = self
+        myImagePickerController.delegate = self
         
     }
 
@@ -113,20 +117,28 @@ class ViewController: UIViewController {
     }
 
     private func openUserPhotoAlbum() {
-//
+        myImagePickerController.sourceType = .photoLibrary
+        myImagePickerController.allowsEditing = true
+        present(myImagePickerController, animated: true)
     }
 
     // ==============================================
     // MARK: - @objc Functions
     // ==============================================
-    @objc func handleTapAddsPhotoFromAlbum(_ sender: UITapGestureRecognizer) {
-        print("tapGestureIsWorking")
-        selectedPlusImage = topLeft_UIImage
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.allowsEditing = true
-        present(imagePickerController, animated: true)
-        
-//            openUserPhotoAlbum()
+    @objc func handleTapAddsTL(_ sender: UITapGestureRecognizer) {
+        switch sender.name {
+        case "TL":
+            selectedPlusImage = topLeft_UIImage
+        case "TR":
+            selectedPlusImage = topRight_UIImage
+        case "BL":
+            selectedPlusImage = bottomLeft_UIImage
+        case "BR":
+            selectedPlusImage = bottomRight_UIImage
+        default:
+            break
+        }
+            openUserPhotoAlbum()
     }
 
     @objc func handleSwipeGestureToShareView(_ sender: UISwipeGestureRecognizer ) {
