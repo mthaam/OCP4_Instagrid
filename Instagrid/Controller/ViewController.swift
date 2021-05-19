@@ -19,7 +19,7 @@ class ViewController: UIViewController {
             setStyle(style: style)
         }
     }
-    private var selectedPlusImage: UIImageView?
+    var selectedPlusImage: UIImageView?
     
     // ==============================================
     // MARK: - Outlets
@@ -146,13 +146,5 @@ class ViewController: UIViewController {
 //        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
     
-}
-
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let selectedImage = info[.editedImage] as? UIImage else { return }
-        selectedPlusImage?.image = selectedImage
-        dismiss(animated: true, completion: nil)
-    }
 }
 
