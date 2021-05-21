@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // ==============================================
-    // MARK: - Private Properties
+    // MARK: - Properties
     // ==============================================
     
     private let myImagePickerController = UIImagePickerController()
@@ -146,5 +146,16 @@ class ViewController: UIViewController {
 //        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
     
+}
+
+extension UIView {
+    /// allows to transform the mainBlueView grid into a simple image
+    var transformMainBlueViewToImage: UIImage? {
+        UIGraphicsBeginImageContext(self.bounds.size)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
 
