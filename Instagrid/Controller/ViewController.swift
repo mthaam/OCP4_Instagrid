@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         }
     }
     var selectedPlusImage: UIImageView?
+    private var swipeGesture: UISwipeGestureRecognizer?
     
     // ==============================================
     // MARK: - Outlets
@@ -58,7 +59,8 @@ class ViewController: UIViewController {
         BR_UITapGestureRecognizer.name = "BR"
         bottomRight_UIImage.addGestureRecognizer(BR_UITapGestureRecognizer)
         
-        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestureToShareView(_:)))
+        swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestureToShareView(_:)))
+        guard let swipeGestureRecognizer = swipeGesture else { return }
         swipeToShare_StackView.addGestureRecognizer(swipeGestureRecognizer)
         
         myImagePickerController.delegate = self
@@ -66,7 +68,19 @@ class ViewController: UIViewController {
     }
 
     // ==============================================
-    // MARK: - Enum and func to set grid type
+    // MARK: - Function viewWillTransition()
+    // ==============================================
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            swipeGesture?.direction = .left
+        } else {
+            swipeGesture?.direction = .up
+        }
+    }
+
+    // ==============================================
+    // MARK: - Enum and function to set grid type
     // ==============================================
 
     enum PhotoGridStackViewStyle {
@@ -121,6 +135,18 @@ class ViewController: UIViewController {
         myImagePickerController.allowsEditing = true
         present(myImagePickerController, animated: true)
     }
+    
+    private func share() {
+        guard let myImage = blueView.transformMainBlueViewToImage else { return }
+        
+        let activityViewController = UIActivityViewController(activityItems: [myImage], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
+        activityViewController.completionWithItemsHandler = { _, _, _, _ in
+            UIView.animate(withDuration: 0.5) {
+                self.blueView.transform = .identity
+            }
+        }
+    }
 
     // ==============================================
     // MARK: - @objc Functions
@@ -142,10 +168,21 @@ class ViewController: UIViewController {
     }
 
     @objc func handleSwipeGestureToShareView(_ sender: UISwipeGestureRecognizer ) {
-//        let activityViewController = UIActivityViewController(activityItems: [blueView!], applicationActivities: nil)
-//        present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        if swipeGesture?.direction == .up {
+            UIView.animate(withDuration: 0.6, delay: 0, options: []) {
+                self.blueView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            } completion: { _ in
+                self.share()
+            }
+        } else {
+            UIView.animate(withDuration: 0.6, delay: 0, options: []) {
+                self.blueView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+            } completion: { _ in
+                self.share()
+            }
+        }
     }
-    
+
 }
 
 extension UIView {
