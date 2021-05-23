@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     }
     var selectedPlusImage: UIImageView?
     private var swipeGesture: UISwipeGestureRecognizer?
+    private var firstStart = true
     
     // ==============================================
     // MARK: - Outlets
@@ -72,10 +73,18 @@ class ViewController: UIViewController {
     // ==============================================
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        if UIDevice.current.orientation.isLandscape {
-            swipeGesture?.direction = .left
-        } else {
-            swipeGesture?.direction = .up
+        detectOrientation()
+    }
+    
+    // ==============================================
+    // MARK: - Function viewDidLayoutSubviews()
+    // ==============================================
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if firstStart {
+            firstStart = false
+            detectOrientation()
         }
     }
 
@@ -147,6 +156,14 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    private func detectOrientation() {
+        if UIDevice.current.orientation.isLandscape {
+            swipeGesture?.direction = .left
+        } else {
+            swipeGesture?.direction = .up
+        }
+    }
 
     // ==============================================
     // MARK: - @objc Functions
@@ -184,15 +201,3 @@ class ViewController: UIViewController {
     }
 
 }
-
-extension UIView {
-    /// allows to transform the mainBlueView grid into a simple image
-    var transformMainBlueViewToImage: UIImage? {
-        UIGraphicsBeginImageContext(self.bounds.size)
-        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
-

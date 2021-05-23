@@ -16,6 +16,7 @@
 		86945646263C83D700FE699B /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86945645263C83D700FE699B /* ThirstySoftRegular.otf */; };
 		86945649263C83F600FE699B /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86945648263C83F600FE699B /* Delm-Medium.otf */; };
 		86B70C0726559FCA0042E1F4 /* ViewControllerPhotoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B70C0626559FCA0042E1F4 /* ViewControllerPhotoExtension.swift */; };
+		86E986DE265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E986DD265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		86945645263C83D700FE699B /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		86945648263C83F600FE699B /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		86B70C0626559FCA0042E1F4 /* ViewControllerPhotoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPhotoExtension.swift; sourceTree = "<group>"; };
+		86E986DD265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension_ImageTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				86945634263C6DA200FE699B /* ViewController.swift */,
 				86B70C0626559FCA0042E1F4 /* ViewControllerPhotoExtension.swift */,
+				86E986DD265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				86945631263C6DA200FE699B /* AppDelegate.swift in Sources */,
 				86945633263C6DA200FE699B /* SceneDelegate.swift in Sources */,
 				86B70C0726559FCA0042E1F4 /* ViewControllerPhotoExtension.swift in Sources */,
+				86E986DE265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
