@@ -4,15 +4,16 @@
 //
 //  Created by JEAN SEBASTIEN BRUNET on 30/4/21.
 //
+// swiftlint:disable all
 
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     // ==============================================
     // MARK: - Properties
     // ==============================================
-    
+
     private let myImagePickerController = UIImagePickerController()
     private var style: PhotoGridStackViewStyle = .fourSquares {
         didSet {
@@ -30,12 +31,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueView: UIView!
     @IBOutlet var topStackView: UIStackView!
     @IBOutlet var bottomStackView: UIStackView!
-    @IBOutlet weak var topLeft_UIImage: UIImageView!
-    @IBOutlet weak var topRight_UIImage: UIImageView!
-    @IBOutlet weak var bottomLeft_UIImage: UIImageView!
-    @IBOutlet weak var bottomRight_UIImage: UIImageView!
+    @IBOutlet weak var topLeftUIImage: UIImageView!
+    @IBOutlet weak var topRightUIImage: UIImageView!
+    @IBOutlet weak var bottomLeftUIImage: UIImageView!
+    @IBOutlet weak var bottomRightUIImage: UIImageView!
     @IBOutlet var layoutButtonsArray: [UIButton]!
-    @IBOutlet weak var swipeToShare_StackView: UIStackView!
+    @IBOutlet weak var swipeToShareStackView: UIStackView!
 
     // ==============================================
     // MARK: - View lifecycle functions
@@ -44,28 +45,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
         photogridTypeButtonTouched(layoutButtonsArray[1])
 
-        let TL_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
-        TL_UITapGestureRecognizer.name = "TL"
-        topLeft_UIImage.addGestureRecognizer(TL_UITapGestureRecognizer)
-        let TR_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
-        TR_UITapGestureRecognizer.name = "TR"
-        topRight_UIImage.addGestureRecognizer(TR_UITapGestureRecognizer)
-        let BL_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
-        BL_UITapGestureRecognizer.name = "BL"
-        bottomLeft_UIImage.addGestureRecognizer(BL_UITapGestureRecognizer)
-        let BR_UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
-        BR_UITapGestureRecognizer.name = "BR"
-        bottomRight_UIImage.addGestureRecognizer(BR_UITapGestureRecognizer)
-        
+        let topLeftUITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        topLeftUITapGestureRecognizer.name = "TL"
+        topLeftUIImage.addGestureRecognizer(topLeftUITapGestureRecognizer)
+        let topRightUITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        topRightUITapGestureRecognizer.name = "TR"
+        topRightUIImage.addGestureRecognizer(topRightUITapGestureRecognizer)
+        let bottomLeftUITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        bottomLeftUITapGestureRecognizer.name = "BL"
+        bottomLeftUIImage.addGestureRecognizer(bottomLeftUITapGestureRecognizer)
+        let bottomRightUITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapAddsTL(_:)))
+        bottomRightUITapGestureRecognizer.name = "BR"
+        bottomRightUIImage.addGestureRecognizer(bottomRightUITapGestureRecognizer)
+
         swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestureToShareView(_:)))
         guard let swipeGestureRecognizer = swipeGesture else { return }
-        swipeToShare_StackView.addGestureRecognizer(swipeGestureRecognizer)
-        
+        swipeToShareStackView.addGestureRecognizer(swipeGestureRecognizer)
+
         myImagePickerController.delegate = self
-        
+
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -149,7 +150,7 @@ class ViewController: UIViewController {
         myImagePickerController.allowsEditing = true
         present(myImagePickerController, animated: true)
     }
-    
+
     /// This function first transforms the photo grid to a flattened image,
     /// calling the property transformMainBlueViewToImage, declared
     /// in an UIView extension. Then the function presents the
@@ -157,7 +158,7 @@ class ViewController: UIViewController {
     /// an animation.
     private func share() {
         guard let myImage = blueView.transformMainBlueViewToImage else { return }
-        
+
         let activityViewController = UIActivityViewController(activityItems: [myImage], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
         activityViewController.completionWithItemsHandler = { _, _, _, _ in
@@ -179,19 +180,19 @@ class ViewController: UIViewController {
     // ==============================================
     // MARK: - @objc Functions
     // ==============================================
-    
+
     /// This function changes images in a touched up UIImageView
     /// - Parameter _ : A UITapGestureRecognizer
     @objc func handleTapAddsTL(_ sender: UITapGestureRecognizer) {
         switch sender.name {
         case "TL":
-            selectedPlusImage = topLeft_UIImage
+            selectedPlusImage = topLeftUIImage
         case "TR":
-            selectedPlusImage = topRight_UIImage
+            selectedPlusImage = topRightUIImage
         case "BL":
-            selectedPlusImage = bottomLeft_UIImage
+            selectedPlusImage = bottomLeftUIImage
         case "BR":
-            selectedPlusImage = bottomRight_UIImage
+            selectedPlusImage = bottomRightUIImage
         default:
             break
         }

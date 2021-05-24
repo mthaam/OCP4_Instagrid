@@ -387,12 +387,12 @@
                     </view>
                     <connections>
                         <outlet property="blueView" destination="3DO-4t-uTj" id="pX2-FF-eYm"/>
-                        <outlet property="bottomLeft_UIImage" destination="btQ-9O-Dgo" id="jHd-Sz-uuo"/>
-                        <outlet property="bottomRight_UIImage" destination="wOM-gM-h20" id="Lfc-Rc-RI0"/>
+                        <outlet property="bottomLeftUIImage" destination="btQ-9O-Dgo" id="jHd-Sz-uuo"/>
+                        <outlet property="bottomRightUIImage" destination="wOM-gM-h20" id="Lfc-Rc-RI0"/>
                         <outlet property="bottomStackView" destination="yQ0-GY-kt7" id="M0z-Lh-NxN"/>
-                        <outlet property="swipeToShare_StackView" destination="xan-FX-62F" id="w9R-E7-Ha5"/>
-                        <outlet property="topLeft_UIImage" destination="Pm4-5Z-Pc2" id="v2a-zG-It0"/>
-                        <outlet property="topRight_UIImage" destination="fVL-8v-rHg" id="HE6-uJ-e2D"/>
+                        <outlet property="swipeToShareStackView" destination="xan-FX-62F" id="w9R-E7-Ha5"/>
+                        <outlet property="topLeftUIImage" destination="Pm4-5Z-Pc2" id="v2a-zG-It0"/>
+                        <outlet property="topRightUIImage" destination="fVL-8v-rHg" id="HE6-uJ-e2D"/>
                         <outlet property="topStackView" destination="Ra3-PC-s3B" id="X3I-NZ-XK0"/>
                         <outletCollection property="layoutButtonsArray" destination="zML-Lv-irD" collectionClass="NSMutableArray" id="fBv-bw-LSi"/>
                         <outletCollection property="layoutButtonsArray" destination="dz0-PE-Wls" collectionClass="NSMutableArray" id="7Kc-1t-EPS"/>
