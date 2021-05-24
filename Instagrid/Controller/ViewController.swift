@@ -22,11 +22,11 @@ class ViewController: UIViewController {
     var selectedPlusImage: UIImageView?
     private var swipeGesture: UISwipeGestureRecognizer?
     private var firstStart = true
-    
+
     // ==============================================
-    // MARK: - Outlets
+    // MARK: - @IBOutlets
     // ==============================================
-    
+
     @IBOutlet weak var blueView: UIView!
     @IBOutlet var topStackView: UIStackView!
     @IBOutlet var bottomStackView: UIStackView!
@@ -36,11 +36,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomRight_UIImage: UIImageView!
     @IBOutlet var layoutButtonsArray: [UIButton]!
     @IBOutlet weak var swipeToShare_StackView: UIStackView!
-    
+
     // ==============================================
-    // MARK: - Function viewDidLoad()
+    // MARK: - View lifecycle functions
     // ==============================================
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -68,18 +68,10 @@ class ViewController: UIViewController {
         
     }
 
-    // ==============================================
-    // MARK: - Function viewWillTransition()
-    // ==============================================
-
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         detectOrientation()
     }
-    
-    // ==============================================
-    // MARK: - Function viewDidLayoutSubviews()
-    // ==============================================
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if firstStart {
@@ -92,10 +84,15 @@ class ViewController: UIViewController {
     // MARK: - Enum and function to set grid type
     // ==============================================
 
+    /// This enum defines 3 styles that change the photogrid layout.
     enum PhotoGridStackViewStyle {
         case fourSquares, twoSquaresUp, twoSquaresBottom
     }
 
+    /// This function hides or unhides subviews of a given stack view,
+    /// depending on a style received in paramater.
+    /// - This function is used in var style in a didSet method.
+    /// - Parameter style : an enum type received
     private func setStyle(style: PhotoGridStackViewStyle) {
         switch style {
         case .fourSquares:
@@ -114,6 +111,8 @@ class ViewController: UIViewController {
     // MARK: - @IBActions
     // ==============================================
 
+    /// This action changes the grid's layout whenever a button is touched.
+    /// - Parameter _ : a UIButton that was touched up by user.
     @IBAction func photogridTypeButtonTouched(_ sender: UIButton) {
         layoutButtonsArray.forEach { button in button.isSelected = false }
         switch sender.tag {
@@ -133,18 +132,29 @@ class ViewController: UIViewController {
     // MARK: - Private Functions
     // ==============================================
 
+    /// This function maintains the touched button property "isSelected" to true,
+    /// so that the check mark stays visible to user until another button is touched.
+    /// - Parameter sender : an Int value reprensenting the tag of a given
+    /// touched button.
     private func setSelectedAppereanceForLayoutButton(sender: Int) {
         layoutButtonsArray[sender].isSelected = true
         layoutButtonsArray[sender].imageView?.contentMode = .scaleAspectFit
         layoutButtonsArray[sender].setImage(#imageLiteral(resourceName: "Selected_1024"), for: .selected)
     }
 
+    /// This function sets the ImagePickerController's source type
+    /// to photoLibrary, and presents the Image picker controller.
     private func openUserPhotoAlbum() {
         myImagePickerController.sourceType = .photoLibrary
         myImagePickerController.allowsEditing = true
         present(myImagePickerController, animated: true)
     }
     
+    /// This function first transforms the photo grid to a flattened image,
+    /// calling the property transformMainBlueViewToImage, declared
+    /// in an UIView extension. Then the function presents the
+    /// activity controller and make the photo grid reapper with
+    /// an animation.
     private func share() {
         guard let myImage = blueView.transformMainBlueViewToImage else { return }
         
@@ -156,7 +166,8 @@ class ViewController: UIViewController {
             }, completion: nil)
         }
     }
-    
+    /// This function changes the swipe gesture
+    /// direction accordingly to device's orientation.
     private func detectOrientation() {
         if UIDevice.current.orientation.isLandscape {
             swipeGesture?.direction = .left
@@ -168,6 +179,9 @@ class ViewController: UIViewController {
     // ==============================================
     // MARK: - @objc Functions
     // ==============================================
+    
+    /// This function changes images in a touched up UIImageView
+    /// - Parameter _ : A UITapGestureRecognizer
     @objc func handleTapAddsTL(_ sender: UITapGestureRecognizer) {
         switch sender.name {
         case "TL":
@@ -184,6 +198,10 @@ class ViewController: UIViewController {
             openUserPhotoAlbum()
     }
 
+    /// This function animates the photo grid depending on the swipe gesture
+    /// direction. The function share() is called once the gesture is completed
+    /// by user.
+    /// - Parameter _ : A UISwipeGestureRecognizer
     @objc func handleSwipeGestureToShareView(_ sender: UISwipeGestureRecognizer ) {
         if swipeGesture?.direction == .up {
             UIView.animate(withDuration: 0.6, delay: 0, options: []) {

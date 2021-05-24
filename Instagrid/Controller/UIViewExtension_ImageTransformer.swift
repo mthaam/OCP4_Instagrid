@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 
+/// This extension allows to transform the photo  grid into a flattened image
 extension UIView {
-    /// allows to transform the mainBlueView grid into a simple image
+    
+    /// This calcultated property transforms the photo grid into a flattened image
     var transformMainBlueViewToImage: UIImage? {
         UIGraphicsBeginImageContext(self.bounds.size)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
