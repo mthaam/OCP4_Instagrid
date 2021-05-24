@@ -151,9 +151,9 @@ class ViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [myImage], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
         activityViewController.completionWithItemsHandler = { _, _, _, _ in
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.1, options: [], animations: {
                 self.blueView.transform = .identity
-            }
+            }, completion: nil)
         }
     }
     
