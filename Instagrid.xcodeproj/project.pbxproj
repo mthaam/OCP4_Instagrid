@@ -15,7 +15,6 @@
 		8694563D263C6DA300FE699B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8694563B263C6DA300FE699B /* LaunchScreen.storyboard */; };
 		86945646263C83D700FE699B /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86945645263C83D700FE699B /* ThirstySoftRegular.otf */; };
 		86945649263C83F600FE699B /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 86945648263C83F600FE699B /* Delm-Medium.otf */; };
-		86B70C0726559FCA0042E1F4 /* ViewControllerPhotoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B70C0626559FCA0042E1F4 /* ViewControllerPhotoExtension.swift */; };
 		86E986DE265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E986DD265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		8694563E263C6DA300FE699B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86945645263C83D700FE699B /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		86945648263C83F600FE699B /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
-		86B70C0626559FCA0042E1F4 /* ViewControllerPhotoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPhotoExtension.swift; sourceTree = "<group>"; };
 		86E986DD265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension_ImageTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				86945634263C6DA200FE699B /* ViewController.swift */,
-				86B70C0626559FCA0042E1F4 /* ViewControllerPhotoExtension.swift */,
 				86E986DD265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift */,
 			);
 			path = Controller;
@@ -199,7 +196,6 @@
 				86945635263C6DA200FE699B /* ViewController.swift in Sources */,
 				86945631263C6DA200FE699B /* AppDelegate.swift in Sources */,
 				86945633263C6DA200FE699B /* SceneDelegate.swift in Sources */,
-				86B70C0726559FCA0042E1F4 /* ViewControllerPhotoExtension.swift in Sources */,
 				86E986DE265AE4CE0066D93A /* UIViewExtension_ImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -332,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -350,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8P949KQY4;
 				INFOPLIST_FILE = Instagrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,7 +354,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JSB.Instagrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -369,6 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8P949KQY4;
 				INFOPLIST_FILE = Instagrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.JSB.Instagrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

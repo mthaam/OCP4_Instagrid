@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     // ==============================================
-    // MARK: - Properties
+    // MARK: - Private Properties
     // ==============================================
 
     private let myImagePickerController = UIImagePickerController()
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
             setStyle(style: style)
         }
     }
-    var selectedPlusImage: UIImageView?
+    private var selectedPlusImage: UIImageView?
     private var swipeGesture: UISwipeGestureRecognizer?
     private var firstStart = true
 
@@ -70,6 +70,7 @@ class ViewController: UIViewController {
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         detectOrientation()
     }
 
@@ -220,4 +221,17 @@ class ViewController: UIViewController {
         }
     }
 
+}
+
+/// This extension conforms to 2 protocols :
+/// UIImagePickerControllerDelegate and UINavigationControllerDelegate
+/// The function imagePickerController is set to be able for a user
+/// to choose an image in its gallery/
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        selectedPlusImage?.image = selectedImage
+        selectedPlusImage?.contentMode = .scaleAspectFill
+        dismiss(animated: true, completion: nil)
+    }
 }
