@@ -167,15 +167,6 @@ class ViewController: UIViewController {
             }, completion: nil)
         }
     }
-    /// This function changes the swipe gesture
-    /// direction accordingly to device's orientation.
-    private func detectOrientation() {
-        if UIDevice.current.orientation.isLandscape {
-            swipeGesture?.direction = .left
-        } else {
-            swipeGesture?.direction = .up
-        }
-    }
 
     // ==============================================
     // MARK: - @objc Functions
@@ -216,6 +207,16 @@ class ViewController: UIViewController {
             } completion: { _ in
                 self.share()
             }
+        }
+    }
+
+    /// This function changes the swipe gesture
+    /// direction accordingly to device's orientation.
+    @objc private func detectOrientation() {
+        if UIDevice.current.orientation.isLandscape {
+            swipeGesture?.direction = .left
+        } else {
+            swipeGesture?.direction = .up
         }
     }
 
