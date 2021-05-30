@@ -6,7 +6,6 @@
 //
 // swiftlint:disable all
 
-import Foundation
 import UIKit
 
 /// This extension allows to transform the photo  grid into a flattened image
