@@ -61,11 +61,11 @@ class ViewController: UIViewController {
         bottomRightUITapGestureRecognizer.name = "BR"
         bottomRightUIImage.addGestureRecognizer(bottomRightUITapGestureRecognizer)
 
+        myImagePickerController.delegate = self
+
         swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGestureToShareView(_:)))
         guard let swipeGestureRecognizer = swipeGesture else { return }
         swipeToShareStackView.addGestureRecognizer(swipeGestureRecognizer)
-
-        myImagePickerController.delegate = self
 
     }
 
