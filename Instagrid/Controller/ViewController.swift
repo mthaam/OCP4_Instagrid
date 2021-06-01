@@ -197,13 +197,13 @@ class ViewController: UIViewController {
     /// - Parameter _ : A UISwipeGestureRecognizer
     @objc func handleSwipeGestureToShareView(_ sender: UISwipeGestureRecognizer ) {
         if swipeGesture?.direction == .up {
-            UIView.animate(withDuration: 0.6, delay: 0, options: []) {
+            UIView.animate(withDuration: 0.8, delay: 0, options: []) {
                 self.blueView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
             } completion: { _ in
                 self.share()
             }
         } else {
-            UIView.animate(withDuration: 0.6, delay: 0, options: []) {
+            UIView.animate(withDuration: 0.8, delay: 0, options: []) {
                 self.blueView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
             } completion: { _ in
                 self.share()
@@ -221,7 +221,7 @@ class ViewController: UIViewController {
         }
     }
 
-}
+} // end of class ViewController: UIViewController
 
 /// This extension conforms to 2 protocols :
 /// UIImagePickerControllerDelegate and UINavigationControllerDelegate
@@ -234,4 +234,4 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         selectedPlusImage?.contentMode = .scaleAspectFill
         dismiss(animated: true, completion: nil)
     }
-}
+} // end of extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate

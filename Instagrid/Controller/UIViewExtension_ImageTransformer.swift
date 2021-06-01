@@ -19,4 +19,4 @@ extension UIView {
         UIGraphicsEndImageContext()
         return image
     }
-}
+} // end of extension UIView
