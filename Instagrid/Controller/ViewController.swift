@@ -83,6 +83,20 @@ class ViewController: UIViewController {
     }
 
     // ==============================================
+    // MARK: - @objc Lifecycle functions
+    // ==============================================
+
+    /// This function changes the swipe gesture
+    /// direction accordingly to device's orientation.
+    @objc private func detectOrientation() {
+        if UIDevice.current.orientation.isLandscape {
+            swipeGesture?.direction = .left
+        } else {
+            swipeGesture?.direction = .up
+        }
+    }
+
+    // ==============================================
     // MARK: - Enum and function to set grid type
     // ==============================================
 
@@ -170,7 +184,7 @@ class ViewController: UIViewController {
     }
 
     // ==============================================
-    // MARK: - @objc Functions
+    // MARK: - Gestures @objc Functions
     // ==============================================
 
     /// This function changes images in a touched up UIImageView
@@ -208,16 +222,6 @@ class ViewController: UIViewController {
             } completion: { _ in
                 self.share()
             }
-        }
-    }
-
-    /// This function changes the swipe gesture
-    /// direction accordingly to device's orientation.
-    @objc private func detectOrientation() {
-        if UIDevice.current.orientation.isLandscape {
-            swipeGesture?.direction = .left
-        } else {
-            swipeGesture?.direction = .up
         }
     }
 
