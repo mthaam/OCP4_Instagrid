@@ -19,4 +19,13 @@ extension UIView {
         UIGraphicsEndImageContext()
         return image
     }
+
+    func rotate() {
+        let rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(value: Double.pi * 2)
+        rotation.duration = 0.45
+        rotation.isCumulative = true
+        rotation.repeatCount = 0.5
+        self.layer.add(rotation, forKey: "rotationAnimation")
+    }
 } // end of extension UIView

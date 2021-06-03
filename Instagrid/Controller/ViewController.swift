@@ -178,8 +178,20 @@ class ViewController: UIViewController {
         present(activityViewController, animated: true, completion: nil)
         activityViewController.completionWithItemsHandler = { _, _, _, _ in
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.1, options: [], animations: {
+                self.blueView.rotate()
                 self.blueView.transform = .identity
             }, completion: nil)
+        }
+    }
+
+    private func animateBlueView(with translation: CGAffineTransform) {
+        UIView.animate(withDuration: 1.1, delay: 0.4, options: []) {
+            self.blueView.rotate()
+            let scaleView = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            let transformAndScale = scaleView.concatenating(translation)
+            self.blueView.transform = transformAndScale
+        } completion: { _ in
+            self.share()
         }
     }
 
@@ -211,17 +223,11 @@ class ViewController: UIViewController {
     /// - Parameter _ : A UISwipeGestureRecognizer
     @objc func handleSwipeGestureToShareView(_ sender: UISwipeGestureRecognizer ) {
         if swipeGesture?.direction == .up {
-            UIView.animate(withDuration: 0.8, delay: 0, options: []) {
-                self.blueView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
-            } completion: { _ in
-                self.share()
-            }
+            let translation = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            animateBlueView(with: translation)
         } else {
-            UIView.animate(withDuration: 0.8, delay: 0, options: []) {
-                self.blueView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-            } completion: { _ in
-                self.share()
-            }
+            let translation = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+            animateBlueView(with: translation)
         }
     }
 
